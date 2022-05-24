@@ -17,6 +17,7 @@ jobs:
         sudo git clone --depth 1 --branch android-4.4.4_r2.0.1 --single-branch https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.7 /opt/toolchains/arm-eabi-4.7/
     - name: Building Kernel
       run: |
+        export ARCH=arm
         export KBUILD_BUILD_USER=notnoelchannel
         export KBUILD_BUILD_HOST=rickrollmachine
         make -j2 bcm21664_hawaii_ss_kylepro_rev00_cyanogenmod_defconfig
